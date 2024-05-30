@@ -1,0 +1,8 @@
+adaptation\_pathways.version module
+===================================
+
+.. automodule:: adaptation_pathways.version
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :inherited-members:

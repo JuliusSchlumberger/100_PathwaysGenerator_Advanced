@@ -1,0 +1,8 @@
+adaptation\_pathways.desktop.widget.colour\_button module
+=========================================================
+
+.. automodule:: adaptation_pathways.desktop.widget.colour_button
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :inherited-members:

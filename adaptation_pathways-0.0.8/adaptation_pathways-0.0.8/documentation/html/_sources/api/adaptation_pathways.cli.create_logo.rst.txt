@@ -1,0 +1,8 @@
+adaptation\_pathways.cli.create\_logo module
+============================================
+
+.. automodule:: adaptation_pathways.cli.create_logo
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :inherited-members:

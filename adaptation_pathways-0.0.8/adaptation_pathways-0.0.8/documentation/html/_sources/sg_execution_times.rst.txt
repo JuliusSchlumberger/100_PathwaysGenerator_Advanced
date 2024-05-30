@@ -1,0 +1,94 @@
+
+:orphan:
+
+.. _sphx_glr_sg_execution_times:
+
+
+Computation times
+=================
+**00:00.775** total execution time for 20 files **from all galleries**:
+
+.. container::
+
+  .. raw:: html
+
+    <style scoped>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+    <script type="text/javascript" class="init">
+    $(document).ready( function () {
+        $('table.sg-datatable').DataTable({order: [[1, 'desc']]});
+    } );
+    </script>
+
+  .. list-table::
+   :header-rows: 1
+   :class: table table-striped sg-datatable
+
+   * - Example
+     - Time
+     - Mem (MB)
+   * - :ref:`sphx_glr_develop_example_ex_05_sequence_graph_05_plot_serial_sequence_graph.py` (``../../../project/gauja/geoneric/project/adaptation_pathways/documentation/develop/example/ex_05_sequence_graph/05_plot_serial_sequence_graph.py``)
+     - 00:00.048
+     - 0.0
+   * - :ref:`sphx_glr_develop_example_ex_10_pathway_graph_25_plot_example_pathway_graph.py` (``../../../project/gauja/geoneric/project/adaptation_pathways/documentation/develop/example/ex_10_pathway_graph/25_plot_example_pathway_graph.py``)
+     - 00:00.045
+     - 0.0
+   * - :ref:`sphx_glr_develop_example_ex_15_pathway_map_25_plot_example_pathway_map.py` (``../../../project/gauja/geoneric/project/adaptation_pathways/documentation/develop/example/ex_15_pathway_map/25_plot_example_pathway_map.py``)
+     - 00:00.044
+     - 0.0
+   * - :ref:`sphx_glr_develop_example_ex_15_pathway_map_20_plot_example_pathway_map.py` (``../../../project/gauja/geoneric/project/adaptation_pathways/documentation/develop/example/ex_15_pathway_map/20_plot_example_pathway_map.py``)
+     - 00:00.044
+     - 0.0
+   * - :ref:`sphx_glr_develop_example_ex_10_pathway_graph_20_plot_example_pathway_graph.py` (``../../../project/gauja/geoneric/project/adaptation_pathways/documentation/develop/example/ex_10_pathway_graph/20_plot_example_pathway_graph.py``)
+     - 00:00.043
+     - 0.0
+   * - :ref:`sphx_glr_use_example_ex_10_pathway_map_20_plot_example_pathway_map_classic.py` (``../../../project/gauja/geoneric/project/adaptation_pathways/documentation/use/example/ex_10_pathway_map/20_plot_example_pathway_map_classic.py``)
+     - 00:00.041
+     - 0.0
+   * - :ref:`sphx_glr_use_example_ex_10_pathway_map_05_plot_serial_pathway_map_classic.py` (``../../../project/gauja/geoneric/project/adaptation_pathways/documentation/use/example/ex_10_pathway_map/05_plot_serial_pathway_map_classic.py``)
+     - 00:00.039
+     - 0.0
+   * - :ref:`sphx_glr_use_example_ex_10_pathway_map_10_plot_diverging_pathway_map_classic.py` (``../../../project/gauja/geoneric/project/adaptation_pathways/documentation/use/example/ex_10_pathway_map/10_plot_diverging_pathway_map_classic.py``)
+     - 00:00.038
+     - 0.0
+   * - :ref:`sphx_glr_develop_example_ex_15_pathway_map_15_plot_converging_pathway_map.py` (``../../../project/gauja/geoneric/project/adaptation_pathways/documentation/develop/example/ex_15_pathway_map/15_plot_converging_pathway_map.py``)
+     - 00:00.038
+     - 0.0
+   * - :ref:`sphx_glr_use_example_ex_10_pathway_map_25_plot_example_pathway_map_classic.py` (``../../../project/gauja/geoneric/project/adaptation_pathways/documentation/use/example/ex_10_pathway_map/25_plot_example_pathway_map_classic.py``)
+     - 00:00.038
+     - 0.0
+   * - :ref:`sphx_glr_develop_example_ex_10_pathway_graph_15_plot_converging_pathway_graph.py` (``../../../project/gauja/geoneric/project/adaptation_pathways/documentation/develop/example/ex_10_pathway_graph/15_plot_converging_pathway_graph.py``)
+     - 00:00.037
+     - 0.0
+   * - :ref:`sphx_glr_develop_example_ex_05_sequence_graph_20_plot_example_sequence_graph.py` (``../../../project/gauja/geoneric/project/adaptation_pathways/documentation/develop/example/ex_05_sequence_graph/20_plot_example_sequence_graph.py``)
+     - 00:00.037
+     - 0.0
+   * - :ref:`sphx_glr_develop_example_ex_15_pathway_map_10_plot_diverging_pathway_map.py` (``../../../project/gauja/geoneric/project/adaptation_pathways/documentation/develop/example/ex_15_pathway_map/10_plot_diverging_pathway_map.py``)
+     - 00:00.037
+     - 0.0
+   * - :ref:`sphx_glr_develop_example_ex_05_sequence_graph_25_plot_example_sequence_graph.py` (``../../../project/gauja/geoneric/project/adaptation_pathways/documentation/develop/example/ex_05_sequence_graph/25_plot_example_sequence_graph.py``)
+     - 00:00.036
+     - 0.0
+   * - :ref:`sphx_glr_use_example_ex_10_pathway_map_15_plot_converging_pathway_map_classic.py` (``../../../project/gauja/geoneric/project/adaptation_pathways/documentation/use/example/ex_10_pathway_map/15_plot_converging_pathway_map_classic.py``)
+     - 00:00.036
+     - 0.0
+   * - :ref:`sphx_glr_develop_example_ex_10_pathway_graph_10_plot_diverging_pathway_graph.py` (``../../../project/gauja/geoneric/project/adaptation_pathways/documentation/develop/example/ex_10_pathway_graph/10_plot_diverging_pathway_graph.py``)
+     - 00:00.035
+     - 0.0
+   * - :ref:`sphx_glr_develop_example_ex_15_pathway_map_05_plot_serial_pathway_map.py` (``../../../project/gauja/geoneric/project/adaptation_pathways/documentation/develop/example/ex_15_pathway_map/05_plot_serial_pathway_map.py``)
+     - 00:00.034
+     - 0.0
+   * - :ref:`sphx_glr_develop_example_ex_05_sequence_graph_10_plot_diverging_sequence_graph.py` (``../../../project/gauja/geoneric/project/adaptation_pathways/documentation/develop/example/ex_05_sequence_graph/10_plot_diverging_sequence_graph.py``)
+     - 00:00.034
+     - 0.0
+   * - :ref:`sphx_glr_develop_example_ex_05_sequence_graph_15_plot_converging_sequence_graph.py` (``../../../project/gauja/geoneric/project/adaptation_pathways/documentation/develop/example/ex_05_sequence_graph/15_plot_converging_sequence_graph.py``)
+     - 00:00.034
+     - 0.0
+   * - :ref:`sphx_glr_develop_example_ex_10_pathway_graph_05_plot_serial_pathway_graph.py` (``../../../project/gauja/geoneric/project/adaptation_pathways/documentation/develop/example/ex_10_pathway_graph/05_plot_serial_pathway_graph.py``)
+     - 00:00.034
+     - 0.0

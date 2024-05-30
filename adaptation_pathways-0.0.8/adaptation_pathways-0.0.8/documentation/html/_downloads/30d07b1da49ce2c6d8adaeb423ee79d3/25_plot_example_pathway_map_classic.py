@@ -1,0 +1,62 @@
+"""
+Pathway map for an example
+==========================
+"""
+
+from io import StringIO
+
+import matplotlib.pyplot as plt
+
+from adaptation_pathways.graph import (
+    action_level_by_first_occurrence,
+    read_sequences,
+    read_tipping_points,
+    sequence_graph_to_pathway_map,
+    sequences_to_sequence_graph,
+)
+from adaptation_pathways.plot import init_axes
+from adaptation_pathways.plot import plot_classic_pathway_map as plot
+
+
+sequences = read_sequences(
+    StringIO(
+        """
+current a
+current b1
+current c
+current d
+b1 a
+b1 c
+b1 d
+c b2
+b2 a
+c a
+c d
+"""
+    )
+)
+sequence_graph = sequences_to_sequence_graph(sequences)
+level_by_action = action_level_by_first_occurrence(sequences)
+
+pathway_map = sequence_graph_to_pathway_map(sequence_graph)
+tipping_points = read_tipping_points(
+    StringIO(
+        """
+current 2030
+a 2100
+b1 2040
+c 2050
+d 2100
+b2 2070
+"""
+    ),
+    pathway_map.actions(),
+)
+
+pathway_map.assign_tipping_points(tipping_points)
+pathway_map.set_attribute("level", level_by_action)
+
+_, axes = plt.subplots(layout="constrained")
+init_axes(axes)
+plot(axes, pathway_map)
+plt.show()

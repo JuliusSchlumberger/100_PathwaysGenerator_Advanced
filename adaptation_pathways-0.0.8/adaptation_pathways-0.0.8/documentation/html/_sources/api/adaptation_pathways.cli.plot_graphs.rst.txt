@@ -1,0 +1,8 @@
+adaptation\_pathways.cli.plot\_graphs module
+============================================
+
+.. automodule:: adaptation_pathways.cli.plot_graphs
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :inherited-members:

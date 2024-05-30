@@ -1,0 +1,826 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="adaptation_pathways.desktop.path module" href="adaptation_pathways.desktop.path.html" /><link rel="prev" title="adaptation_pathways.desktop.widget.sequence_graph module" href="adaptation_pathways.desktop.widget.sequence_graph.html" />
+
+    <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+        <title>adaptation_pathways.desktop.application module - AdaptationPathways documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css?v=61a4c737" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=ae9ec913" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">AdaptationPathways  documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  
+  <span class="sidebar-brand-text">AdaptationPathways  documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../use/index.html">Use the package</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Use the package</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../use/example/index.html">Examples</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../use/example/index.html#examples-of-pathway-maps-classic-layout">Examples of pathway maps (<code class="docutils literal notranslate"><span class="pre">CLASSIC</span></code> layout)</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Examples of pathway maps (CLASSIC layout)</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../use/example/ex_10_pathway_map/index.html">Examples of pathway maps (<code class="docutils literal notranslate"><span class="pre">CLASSIC</span></code> layout)</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Examples of pathway maps (CLASSIC layout)</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../use/example/ex_10_pathway_map/05_plot_serial_pathway_map_classic.html">Pathway map for serial sequence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../use/example/ex_10_pathway_map/10_plot_diverging_pathway_map_classic.html">Pathway map for diverging pathways</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../use/example/ex_10_pathway_map/15_plot_converging_pathway_map_classic.html">Pathway map for converging pathways</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../use/example/ex_10_pathway_map/20_plot_example_pathway_map_classic.html">Pathway map for an example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../use/example/ex_10_pathway_map/25_plot_example_pathway_map_classic.html">Pathway map for an example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../test/index.html">Test the package</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../develop/index.html">Develop the package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Develop the package</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current has-children"><a class="reference internal" href="modules.html">API</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of API</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3 current has-children"><a class="reference internal" href="adaptation_pathways.html">adaptation_pathways package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of adaptation_pathways package</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l4 has-children"><a class="reference internal" href="adaptation_pathways.cli.html">adaptation_pathways.cli package</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of adaptation_pathways.cli package</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="adaptation_pathways.cli.create_logo.html">adaptation_pathways.cli.create_logo module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="adaptation_pathways.cli.main.html">adaptation_pathways.cli.main module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="adaptation_pathways.cli.pathway_generator.html">adaptation_pathways.cli.pathway_generator module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="adaptation_pathways.cli.plot_graphs.html">adaptation_pathways.cli.plot_graphs module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="adaptation_pathways.cli.plot_pathway_map.html">adaptation_pathways.cli.plot_pathway_map module</a></li>
+</ul>
+</li>
+<li class="toctree-l4 current has-children"><a class="reference internal" href="adaptation_pathways.desktop.html">adaptation_pathways.desktop package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of adaptation_pathways.desktop package</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l5 has-children"><a class="reference internal" href="adaptation_pathways.desktop.model.html">adaptation_pathways.desktop.model package</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of adaptation_pathways.desktop.model package</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6"><a class="reference internal" href="adaptation_pathways.desktop.model.action.html">adaptation_pathways.desktop.model.action module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="adaptation_pathways.desktop.model.sequence.html">adaptation_pathways.desktop.model.sequence module</a></li>
+</ul>
+</li>
+<li class="toctree-l5 has-children"><a class="reference internal" href="adaptation_pathways.desktop.widget.html">adaptation_pathways.desktop.widget package</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of adaptation_pathways.desktop.widget package</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6"><a class="reference internal" href="adaptation_pathways.desktop.widget.colour_button.html">adaptation_pathways.desktop.widget.colour_button module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="adaptation_pathways.desktop.widget.pathway_graph.html">adaptation_pathways.desktop.widget.pathway_graph module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="adaptation_pathways.desktop.widget.pathway_map.html">adaptation_pathways.desktop.widget.pathway_map module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="adaptation_pathways.desktop.widget.sequence_graph.html">adaptation_pathways.desktop.widget.sequence_graph module</a></li>
+</ul>
+</li>
+<li class="toctree-l5 current current-page"><a class="current reference internal" href="#">adaptation_pathways.desktop.application module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="adaptation_pathways.desktop.path.html">adaptation_pathways.desktop.path module</a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="adaptation_pathways.graph.html">adaptation_pathways.graph package</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of adaptation_pathways.graph package</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5 has-children"><a class="reference internal" href="adaptation_pathways.graph.node.html">adaptation_pathways.graph.node package</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of adaptation_pathways.graph.node package</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6"><a class="reference internal" href="adaptation_pathways.graph.node.action.html">adaptation_pathways.graph.node.action module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="adaptation_pathways.graph.node.action_begin.html">adaptation_pathways.graph.node.action_begin module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="adaptation_pathways.graph.node.action_conversion.html">adaptation_pathways.graph.node.action_conversion module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="adaptation_pathways.graph.node.action_end.html">adaptation_pathways.graph.node.action_end module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="adaptation_pathways.graph.node.action_period.html">adaptation_pathways.graph.node.action_period module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="adaptation_pathways.graph.node.node.html">adaptation_pathways.graph.node.node module</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="adaptation_pathways.graph.conversion.html">adaptation_pathways.graph.conversion module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="adaptation_pathways.graph.io.html">adaptation_pathways.graph.io module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="adaptation_pathways.graph.pathway_graph.html">adaptation_pathways.graph.pathway_graph module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="adaptation_pathways.graph.pathway_map.html">adaptation_pathways.graph.pathway_map module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="adaptation_pathways.graph.rooted_graph.html">adaptation_pathways.graph.rooted_graph module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="adaptation_pathways.graph.sequence_graph.html">adaptation_pathways.graph.sequence_graph module</a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="adaptation_pathways.plot.html">adaptation_pathways.plot package</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of adaptation_pathways.plot package</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5 has-children"><a class="reference internal" href="adaptation_pathways.plot.pathway_graph.html">adaptation_pathways.plot.pathway_graph package</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of adaptation_pathways.plot.pathway_graph package</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6"><a class="reference internal" href="adaptation_pathways.plot.pathway_graph.default.html">adaptation_pathways.plot.pathway_graph.default module</a></li>
+</ul>
+</li>
+<li class="toctree-l5 has-children"><a class="reference internal" href="adaptation_pathways.plot.pathway_map.html">adaptation_pathways.plot.pathway_map package</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle navigation of adaptation_pathways.plot.pathway_map package</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6"><a class="reference internal" href="adaptation_pathways.plot.pathway_map.classic.html">adaptation_pathways.plot.pathway_map.classic module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="adaptation_pathways.plot.pathway_map.default.html">adaptation_pathways.plot.pathway_map.default module</a></li>
+</ul>
+</li>
+<li class="toctree-l5 has-children"><a class="reference internal" href="adaptation_pathways.plot.sequence_graph.html">adaptation_pathways.plot.sequence_graph package</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle navigation of adaptation_pathways.plot.sequence_graph package</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6"><a class="reference internal" href="adaptation_pathways.plot.sequence_graph.default.html">adaptation_pathways.plot.sequence_graph.default module</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="adaptation_pathways.plot.colour.html">adaptation_pathways.plot.colour module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="adaptation_pathways.plot.default.html">adaptation_pathways.plot.default module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="adaptation_pathways.plot.util.html">adaptation_pathways.plot.util module</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="adaptation_pathways.action.html">adaptation_pathways.action module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="adaptation_pathways.action_combination.html">adaptation_pathways.action_combination module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="adaptation_pathways.version.html">adaptation_pathways.version module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../genindex.html">Index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../develop/example/index.html">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../develop/example/index.html#examples-of-sequence-graphs">Examples of sequence graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../develop/example/index.html#examples-of-pathway-graphs">Examples of pathway graphs</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../develop/example/index.html#examples-of-pathway-maps-default-layout">Examples of pathway maps (default layout)</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle navigation of Examples of pathway maps (default layout)</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../develop/example/ex_05_sequence_graph/index.html">Examples of sequence graphs</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle navigation of Examples of sequence graphs</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../develop/example/ex_05_sequence_graph/05_plot_serial_sequence_graph.html">Sequence graph for serial sequence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../develop/example/ex_05_sequence_graph/10_plot_diverging_sequence_graph.html">Sequence graph for diverging sequence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../develop/example/ex_05_sequence_graph/15_plot_converging_sequence_graph.html">Sequence graph for converging sequence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../develop/example/ex_05_sequence_graph/20_plot_example_sequence_graph.html">Sequence graph for an example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../develop/example/ex_05_sequence_graph/25_plot_example_sequence_graph.html">Sequence graph for an example</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../develop/example/ex_10_pathway_graph/index.html">Examples of pathway graphs</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle navigation of Examples of pathway graphs</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../develop/example/ex_10_pathway_graph/05_plot_serial_pathway_graph.html">Pathway graph for serial pathway</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../develop/example/ex_10_pathway_graph/10_plot_diverging_pathway_graph.html">Pathway graph for diverging pathways</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../develop/example/ex_10_pathway_graph/15_plot_converging_pathway_graph.html">Pathway graph for converging pathways</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../develop/example/ex_10_pathway_graph/20_plot_example_pathway_graph.html">Pathway graph for an example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../develop/example/ex_10_pathway_graph/25_plot_example_pathway_graph.html">Pathway graph for an example</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../develop/example/ex_15_pathway_map/index.html">Examples of pathway maps (default layout)</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle navigation of Examples of pathway maps (default layout)</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../develop/example/ex_15_pathway_map/05_plot_serial_pathway_map.html">Pathway map for serial sequence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../develop/example/ex_15_pathway_map/10_plot_diverging_pathway_map.html">Pathway map for diverging pathways</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../develop/example/ex_15_pathway_map/15_plot_converging_pathway_map.html">Pathway map for converging pathways</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../develop/example/ex_15_pathway_map/20_plot_example_pathway_map.html">Pathway map for an example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../develop/example/ex_15_pathway_map/25_plot_example_pathway_map.html">Pathway map for an example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="module-adaptation_pathways.desktop.application">
+<span id="adaptation-pathways-desktop-application-module"></span><h1>adaptation_pathways.desktop.application module<a class="headerlink" href="#module-adaptation_pathways.desktop.application" title="Link to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">adaptation_pathways.desktop.application.</span></span><span class="sig-name descname"><span class="pre">MainUI</span></span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">QObject</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.actions_about_to_be_removed">
+<span class="sig-name descname"><span class="pre">actions_about_to_be_removed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">first_idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">last_idx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.actions_about_to_be_removed" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.actions_removed">
+<span class="sig-name descname"><span class="pre">actions_removed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">first_idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">last_idx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.actions_removed" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.add_action">
+<span class="sig-name descname"><span class="pre">add_action</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.add_action" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.add_sequence">
+<span class="sig-name descname"><span class="pre">add_sequence</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.add_sequence" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.blockSignals">
+<span class="sig-name descname"><span class="pre">blockSignals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.blockSignals" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.childEvent">
+<span class="sig-name descname"><span class="pre">childEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtCore.QChildEvent</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.childEvent" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.children">
+<span class="sig-name descname"><span class="pre">children</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">PySide6.QtCore.QObject</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.children" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.clear_plots">
+<span class="sig-name descname"><span class="pre">clear_plots</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.clear_plots" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.connect">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg__1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtCore.QObject</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg__2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.12)"><span class="pre">bytes</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg__3</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtCore.Qt.ConnectionType</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Instance(Qt.AutoConnection)</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">PySide6.QtCore.QMetaObject.Connection</span></span></span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.connect" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg__1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.12)"><span class="pre">bytes</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg__2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtCore.Qt.ConnectionType</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Instance(Qt.AutoConnection)</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">PySide6.QtCore.QMetaObject.Connection</span></span></span></dt>
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg__1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.12)"><span class="pre">bytes</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg__2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtCore.QObject</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg__3</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.12)"><span class="pre">bytes</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtCore.Qt.ConnectionType</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Instance(Qt.AutoConnection)</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">PySide6.QtCore.QMetaObject.Connection</span></span></span></dt>
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sender</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtCore.QObject</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">signal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.12)"><span class="pre">bytes</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">member</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.12)"><span class="pre">bytes</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtCore.Qt.ConnectionType</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Instance(Qt.AutoConnection)</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">PySide6.QtCore.QMetaObject.Connection</span></span></span></dt>
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sender</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtCore.QObject</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">signal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtCore.QMetaMethod</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">receiver</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtCore.QObject</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtCore.QMetaMethod</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtCore.Qt.ConnectionType</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Instance(Qt.AutoConnection)</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">PySide6.QtCore.QMetaObject.Connection</span></span></span></dt>
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sender</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtCore.QObject</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">signal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.12)"><span class="pre">bytes</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">receiver</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtCore.QObject</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">member</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.12)"><span class="pre">bytes</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtCore.Qt.ConnectionType</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Instance(Qt.AutoConnection)</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">PySide6.QtCore.QMetaObject.Connection</span></span></span></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.connectNotify">
+<span class="sig-name descname"><span class="pre">connectNotify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">signal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtCore.QMetaMethod</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.connectNotify" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.customEvent">
+<span class="sig-name descname"><span class="pre">customEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtCore.QEvent</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.customEvent" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.deleteLater">
+<span class="sig-name descname"><span class="pre">deleteLater</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.deleteLater" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.destroyed">
+<span class="sig-name descname"><span class="pre">destroyed</span></span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.destroyed" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.disconnect">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">disconnect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg__1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtCore.QMetaObject.Connection</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.disconnect" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">disconnect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg__1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtCore.QObject</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg__2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.12)"><span class="pre">bytes</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg__3</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></span></span></dt>
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">disconnect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg__1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.12)"><span class="pre">bytes</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg__2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></span></span></dt>
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">disconnect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">receiver</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtCore.QObject</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">member</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.12)"><span class="pre">bytes</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></span></span></dt>
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">disconnect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">signal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.12)"><span class="pre">bytes</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">receiver</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtCore.QObject</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">member</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.12)"><span class="pre">bytes</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></span></span></dt>
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">disconnect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sender</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtCore.QObject</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">signal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtCore.QMetaMethod</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">receiver</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtCore.QObject</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">member</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtCore.QMetaMethod</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></span></span></dt>
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">disconnect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sender</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtCore.QObject</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">signal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.12)"><span class="pre">bytes</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">receiver</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtCore.QObject</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">member</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.12)"><span class="pre">bytes</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></span></span></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.disconnectNotify">
+<span class="sig-name descname"><span class="pre">disconnectNotify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">signal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtCore.QMetaMethod</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.disconnectNotify" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.dumpObjectInfo">
+<span class="sig-name descname"><span class="pre">dumpObjectInfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.dumpObjectInfo" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.dumpObjectTree">
+<span class="sig-name descname"><span class="pre">dumpObjectTree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.dumpObjectTree" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.dynamicPropertyNames">
+<span class="sig-name descname"><span class="pre">dynamicPropertyNames</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">PySide6.QtCore.QByteArray</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.dynamicPropertyNames" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.edit_action">
+<span class="sig-name descname"><span class="pre">edit_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.edit_action" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.edit_sequence">
+<span class="sig-name descname"><span class="pre">edit_sequence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">idx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.edit_sequence" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.emit">
+<span class="sig-name descname"><span class="pre">emit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg__1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.12)"><span class="pre">bytes</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.emit" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.event">
+<span class="sig-name descname"><span class="pre">event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtCore.QEvent</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.event" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.eventFilter">
+<span class="sig-name descname"><span class="pre">eventFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">watched</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtCore.QObject</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtCore.QEvent</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.eventFilter" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.findChild">
+<span class="sig-name descname"><span class="pre">findChild</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#type" title="(in Python v3.12)"><span class="pre">type</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtCore.Qt.FindChildOption</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Instance(Qt.FindChildrenRecursively)</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.12)"><span class="pre">object</span></a></span></span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.findChild" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.findChildren">
+<span class="sig-name descname"><span class="pre">findChildren</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#type" title="(in Python v3.12)"><span class="pre">type</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtCore.Qt.FindChildOption</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Instance(Qt.FindChildrenRecursively)</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterable</span></span></span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.findChildren" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">findChildren</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#type" title="(in Python v3.12)"><span class="pre">type</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">pattern</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtCore.QRegularExpression</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtCore.Qt.FindChildOption</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Instance(Qt.FindChildrenRecursively)</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterable</span></span></span></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.inherits">
+<span class="sig-name descname"><span class="pre">inherits</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">classname</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.12)"><span class="pre">bytes</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.inherits" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.installEventFilter">
+<span class="sig-name descname"><span class="pre">installEventFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filterObj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtCore.QObject</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.installEventFilter" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.isQuickItemType">
+<span class="sig-name descname"><span class="pre">isQuickItemType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.isQuickItemType" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.isSignalConnected">
+<span class="sig-name descname"><span class="pre">isSignalConnected</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">signal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtCore.QMetaMethod</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.isSignalConnected" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.isWidgetType">
+<span class="sig-name descname"><span class="pre">isWidgetType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.isWidgetType" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.isWindowType">
+<span class="sig-name descname"><span class="pre">isWindowType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.isWindowType" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.killTimer">
+<span class="sig-name descname"><span class="pre">killTimer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.killTimer" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.log_message">
+<span class="sig-name descname"><span class="pre">log_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.log_message" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.metaObject">
+<span class="sig-name descname"><span class="pre">metaObject</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">PySide6.QtCore.QMetaObject</span></span></span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.metaObject" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.moveToThread">
+<span class="sig-name descname"><span class="pre">moveToThread</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thread</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtCore.QThread</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.moveToThread" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.objectName">
+<span class="sig-name descname"><span class="pre">objectName</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.objectName" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.objectNameChanged">
+<span class="sig-name descname"><span class="pre">objectNameChanged</span></span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.objectNameChanged" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.on_actions_table_context_menu">
+<span class="sig-name descname"><span class="pre">on_actions_table_context_menu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pos</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.on_actions_table_context_menu" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.on_sequences_table_context_menu">
+<span class="sig-name descname"><span class="pre">on_sequences_table_context_menu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pos</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.on_sequences_table_context_menu" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.open_dataset">
+<span class="sig-name descname"><span class="pre">open_dataset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.open_dataset" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.parent">
+<span class="sig-name descname"><span class="pre">parent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">PySide6.QtCore.QObject</span></span></span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.parent" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.plot_pathway_graph">
+<span class="sig-name descname"><span class="pre">plot_pathway_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pathway_graph</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="adaptation_pathways.graph.pathway_graph.html#adaptation_pathways.graph.pathway_graph.PathwayGraph" title="adaptation_pathways.graph.pathway_graph.PathwayGraph"><span class="pre">PathwayGraph</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.plot_pathway_graph" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.plot_pathway_map">
+<span class="sig-name descname"><span class="pre">plot_pathway_map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pathway_map</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="adaptation_pathways.graph.pathway_map.html#adaptation_pathways.graph.pathway_map.PathwayMap" title="adaptation_pathways.graph.pathway_map.PathwayMap"><span class="pre">PathwayMap</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.plot_pathway_map" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.plot_sequence_graph">
+<span class="sig-name descname"><span class="pre">plot_sequence_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sequence_graph</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="adaptation_pathways.graph.sequence_graph.html#adaptation_pathways.graph.sequence_graph.SequenceGraph" title="adaptation_pathways.graph.sequence_graph.SequenceGraph"><span class="pre">SequenceGraph</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.plot_sequence_graph" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.property">
+<span class="sig-name descname"><span class="pre">property</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.property" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.receivers">
+<span class="sig-name descname"><span class="pre">receivers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">signal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.12)"><span class="pre">bytes</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><span class="pre">int</span></a></span></span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.receivers" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.removeEventFilter">
+<span class="sig-name descname"><span class="pre">removeEventFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtCore.QObject</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.removeEventFilter" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.remove_actions">
+<span class="sig-name descname"><span class="pre">remove_actions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nr_actions</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.remove_actions" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.sender">
+<span class="sig-name descname"><span class="pre">sender</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">PySide6.QtCore.QObject</span></span></span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.sender" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.senderSignalIndex">
+<span class="sig-name descname"><span class="pre">senderSignalIndex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><span class="pre">int</span></a></span></span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.senderSignalIndex" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.sequences_about_to_be_removed">
+<span class="sig-name descname"><span class="pre">sequences_about_to_be_removed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">first_idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">last_idx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.sequences_about_to_be_removed" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.sequences_removed">
+<span class="sig-name descname"><span class="pre">sequences_removed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">first_idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">last_idx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.sequences_removed" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.setObjectName">
+<span class="sig-name descname"><span class="pre">setObjectName</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.setObjectName" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.setParent">
+<span class="sig-name descname"><span class="pre">setParent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtCore.QObject</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.setParent" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.setProperty">
+<span class="sig-name descname"><span class="pre">setProperty</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.setProperty" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.show_about_dialog">
+<span class="sig-name descname"><span class="pre">show_about_dialog</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.show_about_dialog" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.signalsBlocked">
+<span class="sig-name descname"><span class="pre">signalsBlocked</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.12)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.signalsBlocked" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.startTimer">
+<span class="sig-name descname"><span class="pre">startTimer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">timerType</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtCore.Qt.TimerType</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Instance(Qt.CoarseTimer)</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><span class="pre">int</span></a></span></span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.startTimer" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.staticMetaObject">
+<span class="sig-name descname"><span class="pre">staticMetaObject</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">PySide6.QtCore.QMetaObject(&quot;MainUI&quot;</span> <span class="pre">inherits</span> <span class="pre">&quot;QObject&quot;:</span> <span class="pre">Methods:</span>&#160;&#160; <span class="pre">#5</span> <span class="pre">type=Slot,</span> <span class="pre">signature=open_dataset()</span>&#160;&#160; <span class="pre">#6</span> <span class="pre">type=Slot,</span> <span class="pre">signature=show_about_dialog()</span> <span class="pre">)</span></em><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.staticMetaObject" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.thread">
+<span class="sig-name descname"><span class="pre">thread</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">PySide6.QtCore.QThread</span></span></span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.thread" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.timerEvent">
+<span class="sig-name descname"><span class="pre">timerEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide6.QtCore.QTimerEvent</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.timerEvent" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.tr">
+<span class="sig-name descname"><span class="pre">tr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sourceText</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">disambiguation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">-1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.tr" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.MainUI.update_plots">
+<span class="sig-name descname"><span class="pre">update_plots</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#adaptation_pathways.desktop.application.MainUI.update_plots" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.application">
+<span class="sig-prename descclassname"><span class="pre">adaptation_pathways.desktop.application.</span></span><span class="sig-name descname"><span class="pre">application</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#adaptation_pathways.desktop.application.application" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.configure_colour_dialog">
+<span class="sig-prename descclassname"><span class="pre">adaptation_pathways.desktop.application.</span></span><span class="sig-name descname"><span class="pre">configure_colour_dialog</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">palette</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#adaptation_pathways.desktop.application.configure_colour_dialog" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="adaptation_pathways.desktop.application.timestamp">
+<span class="sig-prename descclassname"><span class="pre">adaptation_pathways.desktop.application.</span></span><span class="sig-name descname"><span class="pre">timestamp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#adaptation_pathways.desktop.application.timestamp" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="adaptation_pathways.desktop.path.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">adaptation_pathways.desktop.path module</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="adaptation_pathways.desktop.widget.sequence_graph.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">adaptation_pathways.desktop.widget.sequence_graph module</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2024, TODO
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">adaptation_pathways.desktop.application module</a><ul>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI"><code class="docutils literal notranslate"><span class="pre">MainUI</span></code></a><ul>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.actions_about_to_be_removed"><code class="docutils literal notranslate"><span class="pre">MainUI.actions_about_to_be_removed()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.actions_removed"><code class="docutils literal notranslate"><span class="pre">MainUI.actions_removed()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.add_action"><code class="docutils literal notranslate"><span class="pre">MainUI.add_action()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.add_sequence"><code class="docutils literal notranslate"><span class="pre">MainUI.add_sequence()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.blockSignals"><code class="docutils literal notranslate"><span class="pre">MainUI.blockSignals()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.childEvent"><code class="docutils literal notranslate"><span class="pre">MainUI.childEvent()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.children"><code class="docutils literal notranslate"><span class="pre">MainUI.children()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.clear_plots"><code class="docutils literal notranslate"><span class="pre">MainUI.clear_plots()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.connect"><code class="docutils literal notranslate"><span class="pre">MainUI.connect()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.connectNotify"><code class="docutils literal notranslate"><span class="pre">MainUI.connectNotify()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.customEvent"><code class="docutils literal notranslate"><span class="pre">MainUI.customEvent()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.deleteLater"><code class="docutils literal notranslate"><span class="pre">MainUI.deleteLater()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.destroyed"><code class="docutils literal notranslate"><span class="pre">MainUI.destroyed</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.disconnect"><code class="docutils literal notranslate"><span class="pre">MainUI.disconnect()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.disconnectNotify"><code class="docutils literal notranslate"><span class="pre">MainUI.disconnectNotify()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.dumpObjectInfo"><code class="docutils literal notranslate"><span class="pre">MainUI.dumpObjectInfo()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.dumpObjectTree"><code class="docutils literal notranslate"><span class="pre">MainUI.dumpObjectTree()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.dynamicPropertyNames"><code class="docutils literal notranslate"><span class="pre">MainUI.dynamicPropertyNames()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.edit_action"><code class="docutils literal notranslate"><span class="pre">MainUI.edit_action()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.edit_sequence"><code class="docutils literal notranslate"><span class="pre">MainUI.edit_sequence()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.emit"><code class="docutils literal notranslate"><span class="pre">MainUI.emit()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.event"><code class="docutils literal notranslate"><span class="pre">MainUI.event()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.eventFilter"><code class="docutils literal notranslate"><span class="pre">MainUI.eventFilter()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.findChild"><code class="docutils literal notranslate"><span class="pre">MainUI.findChild()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.findChildren"><code class="docutils literal notranslate"><span class="pre">MainUI.findChildren()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.inherits"><code class="docutils literal notranslate"><span class="pre">MainUI.inherits()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.installEventFilter"><code class="docutils literal notranslate"><span class="pre">MainUI.installEventFilter()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.isQuickItemType"><code class="docutils literal notranslate"><span class="pre">MainUI.isQuickItemType()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.isSignalConnected"><code class="docutils literal notranslate"><span class="pre">MainUI.isSignalConnected()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.isWidgetType"><code class="docutils literal notranslate"><span class="pre">MainUI.isWidgetType()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.isWindowType"><code class="docutils literal notranslate"><span class="pre">MainUI.isWindowType()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.killTimer"><code class="docutils literal notranslate"><span class="pre">MainUI.killTimer()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.log_message"><code class="docutils literal notranslate"><span class="pre">MainUI.log_message()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.metaObject"><code class="docutils literal notranslate"><span class="pre">MainUI.metaObject()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.moveToThread"><code class="docutils literal notranslate"><span class="pre">MainUI.moveToThread()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.objectName"><code class="docutils literal notranslate"><span class="pre">MainUI.objectName()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.objectNameChanged"><code class="docutils literal notranslate"><span class="pre">MainUI.objectNameChanged</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.on_actions_table_context_menu"><code class="docutils literal notranslate"><span class="pre">MainUI.on_actions_table_context_menu()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.on_sequences_table_context_menu"><code class="docutils literal notranslate"><span class="pre">MainUI.on_sequences_table_context_menu()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.open_dataset"><code class="docutils literal notranslate"><span class="pre">MainUI.open_dataset()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.parent"><code class="docutils literal notranslate"><span class="pre">MainUI.parent()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.plot_pathway_graph"><code class="docutils literal notranslate"><span class="pre">MainUI.plot_pathway_graph()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.plot_pathway_map"><code class="docutils literal notranslate"><span class="pre">MainUI.plot_pathway_map()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.plot_sequence_graph"><code class="docutils literal notranslate"><span class="pre">MainUI.plot_sequence_graph()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.property"><code class="docutils literal notranslate"><span class="pre">MainUI.property()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.receivers"><code class="docutils literal notranslate"><span class="pre">MainUI.receivers()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.removeEventFilter"><code class="docutils literal notranslate"><span class="pre">MainUI.removeEventFilter()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.remove_actions"><code class="docutils literal notranslate"><span class="pre">MainUI.remove_actions()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.sender"><code class="docutils literal notranslate"><span class="pre">MainUI.sender()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.senderSignalIndex"><code class="docutils literal notranslate"><span class="pre">MainUI.senderSignalIndex()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.sequences_about_to_be_removed"><code class="docutils literal notranslate"><span class="pre">MainUI.sequences_about_to_be_removed()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.sequences_removed"><code class="docutils literal notranslate"><span class="pre">MainUI.sequences_removed()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.setObjectName"><code class="docutils literal notranslate"><span class="pre">MainUI.setObjectName()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.setParent"><code class="docutils literal notranslate"><span class="pre">MainUI.setParent()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.setProperty"><code class="docutils literal notranslate"><span class="pre">MainUI.setProperty()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.show_about_dialog"><code class="docutils literal notranslate"><span class="pre">MainUI.show_about_dialog()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.signalsBlocked"><code class="docutils literal notranslate"><span class="pre">MainUI.signalsBlocked()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.startTimer"><code class="docutils literal notranslate"><span class="pre">MainUI.startTimer()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.staticMetaObject"><code class="docutils literal notranslate"><span class="pre">MainUI.staticMetaObject</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.thread"><code class="docutils literal notranslate"><span class="pre">MainUI.thread()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.timerEvent"><code class="docutils literal notranslate"><span class="pre">MainUI.timerEvent()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.tr"><code class="docutils literal notranslate"><span class="pre">MainUI.tr()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.MainUI.update_plots"><code class="docutils literal notranslate"><span class="pre">MainUI.update_plots()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.application"><code class="docutils literal notranslate"><span class="pre">application()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.configure_colour_dialog"><code class="docutils literal notranslate"><span class="pre">configure_colour_dialog()</span></code></a></li>
+<li><a class="reference internal" href="#adaptation_pathways.desktop.application.timestamp"><code class="docutils literal notranslate"><span class="pre">timestamp()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
+</html>

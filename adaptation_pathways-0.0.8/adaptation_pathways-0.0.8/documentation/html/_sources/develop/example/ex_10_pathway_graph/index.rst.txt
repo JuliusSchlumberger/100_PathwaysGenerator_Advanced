@@ -1,0 +1,113 @@
+
+
+.. _sphx_glr_develop_example_ex_10_pathway_graph:
+
+Examples of pathway graphs
+==========================
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Pathway graph for serial pathway">
+
+.. only:: html
+
+  .. image:: /develop/example/ex_10_pathway_graph/images/thumb/sphx_glr_05_plot_serial_pathway_graph_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_develop_example_ex_10_pathway_graph_05_plot_serial_pathway_graph.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Pathway graph for serial pathway</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Pathway graph for diverging pathways">
+
+.. only:: html
+
+  .. image:: /develop/example/ex_10_pathway_graph/images/thumb/sphx_glr_10_plot_diverging_pathway_graph_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_develop_example_ex_10_pathway_graph_10_plot_diverging_pathway_graph.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Pathway graph for diverging pathways</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Pathway graph for converging pathways">
+
+.. only:: html
+
+  .. image:: /develop/example/ex_10_pathway_graph/images/thumb/sphx_glr_15_plot_converging_pathway_graph_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_develop_example_ex_10_pathway_graph_15_plot_converging_pathway_graph.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Pathway graph for converging pathways</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Pathway graph for an example">
+
+.. only:: html
+
+  .. image:: /develop/example/ex_10_pathway_graph/images/thumb/sphx_glr_20_plot_example_pathway_graph_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_develop_example_ex_10_pathway_graph_20_plot_example_pathway_graph.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Pathway graph for an example</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Pathway graph for an example">
+
+.. only:: html
+
+  .. image:: /develop/example/ex_10_pathway_graph/images/thumb/sphx_glr_25_plot_example_pathway_graph_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_develop_example_ex_10_pathway_graph_25_plot_example_pathway_graph.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Pathway graph for an example</div>
+    </div>
+
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /develop/example/ex_10_pathway_graph/05_plot_serial_pathway_graph
+   /develop/example/ex_10_pathway_graph/10_plot_diverging_pathway_graph
+   /develop/example/ex_10_pathway_graph/15_plot_converging_pathway_graph
+   /develop/example/ex_10_pathway_graph/20_plot_example_pathway_graph
+   /develop/example/ex_10_pathway_graph/25_plot_example_pathway_graph
+

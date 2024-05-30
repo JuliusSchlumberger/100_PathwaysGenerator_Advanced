@@ -1,0 +1,7 @@
+adaptation_pathways
+===================
+
+.. toctree::
+   :maxdepth: 1
+
+   adaptation_pathways

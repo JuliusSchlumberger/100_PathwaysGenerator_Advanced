@@ -1,0 +1,8 @@
+adaptation\_pathways.cli.main module
+====================================
+
+.. automodule:: adaptation_pathways.cli.main
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :inherited-members:

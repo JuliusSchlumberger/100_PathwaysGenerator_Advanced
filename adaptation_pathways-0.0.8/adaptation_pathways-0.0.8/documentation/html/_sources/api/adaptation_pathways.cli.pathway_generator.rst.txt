@@ -1,0 +1,8 @@
+adaptation\_pathways.cli.pathway\_generator module
+==================================================
+
+.. automodule:: adaptation_pathways.cli.pathway_generator
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :inherited-members:

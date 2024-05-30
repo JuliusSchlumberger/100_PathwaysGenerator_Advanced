@@ -1,0 +1,333 @@
+:orphan:
+
+Examples
+========
+Some of the examples use io.StringIO to be able to treat a string as a file. When using
+``ap_plot_graphs`` to plot graphs, the name of a file can be passed containing similar content
+as shown in the examples.
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
+    </div>
+
+Examples of sequence graphs
+===========================
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Sequence graph for serial sequence">
+
+.. only:: html
+
+  .. image:: /develop/example/ex_05_sequence_graph/images/thumb/sphx_glr_05_plot_serial_sequence_graph_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_develop_example_ex_05_sequence_graph_05_plot_serial_sequence_graph.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Sequence graph for serial sequence</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Sequence graph for diverging sequence">
+
+.. only:: html
+
+  .. image:: /develop/example/ex_05_sequence_graph/images/thumb/sphx_glr_10_plot_diverging_sequence_graph_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_develop_example_ex_05_sequence_graph_10_plot_diverging_sequence_graph.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Sequence graph for diverging sequence</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Sequence graph for converging sequence">
+
+.. only:: html
+
+  .. image:: /develop/example/ex_05_sequence_graph/images/thumb/sphx_glr_15_plot_converging_sequence_graph_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_develop_example_ex_05_sequence_graph_15_plot_converging_sequence_graph.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Sequence graph for converging sequence</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Sequence graph for an example">
+
+.. only:: html
+
+  .. image:: /develop/example/ex_05_sequence_graph/images/thumb/sphx_glr_20_plot_example_sequence_graph_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_develop_example_ex_05_sequence_graph_20_plot_example_sequence_graph.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Sequence graph for an example</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="The same action b is used in different pathways. Therefore, in the specification of the sequenc...">
+
+.. only:: html
+
+  .. image:: /develop/example/ex_05_sequence_graph/images/thumb/sphx_glr_25_plot_example_sequence_graph_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_develop_example_ex_05_sequence_graph_25_plot_example_sequence_graph.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Sequence graph for an example</div>
+    </div>
+
+
+.. raw:: html
+
+    </div>
+
+Examples of pathway graphs
+==========================
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Pathway graph for serial pathway">
+
+.. only:: html
+
+  .. image:: /develop/example/ex_10_pathway_graph/images/thumb/sphx_glr_05_plot_serial_pathway_graph_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_develop_example_ex_10_pathway_graph_05_plot_serial_pathway_graph.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Pathway graph for serial pathway</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Pathway graph for diverging pathways">
+
+.. only:: html
+
+  .. image:: /develop/example/ex_10_pathway_graph/images/thumb/sphx_glr_10_plot_diverging_pathway_graph_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_develop_example_ex_10_pathway_graph_10_plot_diverging_pathway_graph.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Pathway graph for diverging pathways</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Pathway graph for converging pathways">
+
+.. only:: html
+
+  .. image:: /develop/example/ex_10_pathway_graph/images/thumb/sphx_glr_15_plot_converging_pathway_graph_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_develop_example_ex_10_pathway_graph_15_plot_converging_pathway_graph.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Pathway graph for converging pathways</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Pathway graph for an example">
+
+.. only:: html
+
+  .. image:: /develop/example/ex_10_pathway_graph/images/thumb/sphx_glr_20_plot_example_pathway_graph_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_develop_example_ex_10_pathway_graph_20_plot_example_pathway_graph.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Pathway graph for an example</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Pathway graph for an example">
+
+.. only:: html
+
+  .. image:: /develop/example/ex_10_pathway_graph/images/thumb/sphx_glr_25_plot_example_pathway_graph_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_develop_example_ex_10_pathway_graph_25_plot_example_pathway_graph.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Pathway graph for an example</div>
+    </div>
+
+
+.. raw:: html
+
+    </div>
+
+Examples of pathway maps (default layout)
+=========================================
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Pathway map for serial sequence">
+
+.. only:: html
+
+  .. image:: /develop/example/ex_15_pathway_map/images/thumb/sphx_glr_05_plot_serial_pathway_map_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_develop_example_ex_15_pathway_map_05_plot_serial_pathway_map.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Pathway map for serial sequence</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Pathway map for diverging pathways">
+
+.. only:: html
+
+  .. image:: /develop/example/ex_15_pathway_map/images/thumb/sphx_glr_10_plot_diverging_pathway_map_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_develop_example_ex_15_pathway_map_10_plot_diverging_pathway_map.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Pathway map for diverging pathways</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Pathway map for converging pathways">
+
+.. only:: html
+
+  .. image:: /develop/example/ex_15_pathway_map/images/thumb/sphx_glr_15_plot_converging_pathway_map_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_develop_example_ex_15_pathway_map_15_plot_converging_pathway_map.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Pathway map for converging pathways</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Pathway map for an example">
+
+.. only:: html
+
+  .. image:: /develop/example/ex_15_pathway_map/images/thumb/sphx_glr_20_plot_example_pathway_map_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_develop_example_ex_15_pathway_map_20_plot_example_pathway_map.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Pathway map for an example</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Pathway map for an example">
+
+.. only:: html
+
+  .. image:: /develop/example/ex_15_pathway_map/images/thumb/sphx_glr_25_plot_example_pathway_map_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_develop_example_ex_15_pathway_map_25_plot_example_pathway_map.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Pathway map for an example</div>
+    </div>
+
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+   :includehidden:
+
+
+   /develop/example/ex_05_sequence_graph/index.rst
+   /develop/example/ex_10_pathway_graph/index.rst
+   /develop/example/ex_15_pathway_map/index.rst
+
+
+
+.. only:: html
+
+ .. rst-class:: sphx-glr-signature
+
+    `Gallery generated by Sphinx-Gallery <https://sphinx-gallery.github.io>`_

@@ -1,0 +1,8 @@
+adaptation\_pathways.action\_combination module
+===============================================
+
+.. automodule:: adaptation_pathways.action_combination
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :inherited-members:

@@ -1,0 +1,29 @@
+adaptation\_pathways package
+============================
+
+.. automodule:: adaptation_pathways
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :inherited-members:
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 1
+
+   adaptation_pathways.cli
+   adaptation_pathways.desktop
+   adaptation_pathways.graph
+   adaptation_pathways.plot
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   adaptation_pathways.action
+   adaptation_pathways.action_combination
+   adaptation_pathways.version

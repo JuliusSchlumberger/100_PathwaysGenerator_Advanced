@@ -1,0 +1,26 @@
+adaptation\_pathways.desktop package
+====================================
+
+.. automodule:: adaptation_pathways.desktop
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :inherited-members:
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 1
+
+   adaptation_pathways.desktop.model
+   adaptation_pathways.desktop.widget
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   adaptation_pathways.desktop.application
+   adaptation_pathways.desktop.path

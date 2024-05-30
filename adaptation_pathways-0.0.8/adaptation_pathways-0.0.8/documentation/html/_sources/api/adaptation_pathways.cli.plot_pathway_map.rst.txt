@@ -1,0 +1,8 @@
+adaptation\_pathways.cli.plot\_pathway\_map module
+==================================================
+
+.. automodule:: adaptation_pathways.cli.plot_pathway_map
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :inherited-members:

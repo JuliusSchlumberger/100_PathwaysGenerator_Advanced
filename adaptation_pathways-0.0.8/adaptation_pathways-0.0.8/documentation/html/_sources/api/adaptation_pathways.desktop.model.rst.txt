@@ -1,0 +1,17 @@
+adaptation\_pathways.desktop.model package
+==========================================
+
+.. automodule:: adaptation_pathways.desktop.model
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :inherited-members:
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   adaptation_pathways.desktop.model.action
+   adaptation_pathways.desktop.model.sequence

@@ -1,0 +1,8 @@
+adaptation\_pathways.desktop.path module
+========================================
+
+.. automodule:: adaptation_pathways.desktop.path
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :inherited-members:

@@ -1,0 +1,29 @@
+adaptation\_pathways.graph package
+==================================
+
+.. automodule:: adaptation_pathways.graph
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :inherited-members:
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 1
+
+   adaptation_pathways.graph.node
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   adaptation_pathways.graph.conversion
+   adaptation_pathways.graph.io
+   adaptation_pathways.graph.pathway_graph
+   adaptation_pathways.graph.pathway_map
+   adaptation_pathways.graph.rooted_graph
+   adaptation_pathways.graph.sequence_graph

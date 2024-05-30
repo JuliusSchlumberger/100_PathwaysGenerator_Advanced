@@ -1,0 +1,8 @@
+adaptation\_pathways.graph.conversion module
+============================================
+
+.. automodule:: adaptation_pathways.graph.conversion
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :inherited-members:

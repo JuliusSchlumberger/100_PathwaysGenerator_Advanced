@@ -1,0 +1,17 @@
+adaptation\_pathways.plot.pathway\_map package
+==============================================
+
+.. automodule:: adaptation_pathways.plot.pathway_map
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :inherited-members:
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   adaptation_pathways.plot.pathway_map.classic
+   adaptation_pathways.plot.pathway_map.default

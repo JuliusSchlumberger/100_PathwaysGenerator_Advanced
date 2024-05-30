@@ -1,0 +1,8 @@
+adaptation\_pathways.graph.sequence\_graph module
+=================================================
+
+.. automodule:: adaptation_pathways.graph.sequence_graph
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :inherited-members:

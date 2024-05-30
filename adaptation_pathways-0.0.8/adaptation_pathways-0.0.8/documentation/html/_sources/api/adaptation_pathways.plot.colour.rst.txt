@@ -1,0 +1,8 @@
+adaptation\_pathways.plot.colour module
+=======================================
+
+.. automodule:: adaptation_pathways.plot.colour
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :inherited-members:

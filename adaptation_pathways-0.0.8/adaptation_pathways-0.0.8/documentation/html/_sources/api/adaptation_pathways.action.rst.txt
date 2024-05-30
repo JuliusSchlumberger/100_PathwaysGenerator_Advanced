@@ -1,0 +1,8 @@
+adaptation\_pathways.action module
+==================================
+
+.. automodule:: adaptation_pathways.action
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :inherited-members:

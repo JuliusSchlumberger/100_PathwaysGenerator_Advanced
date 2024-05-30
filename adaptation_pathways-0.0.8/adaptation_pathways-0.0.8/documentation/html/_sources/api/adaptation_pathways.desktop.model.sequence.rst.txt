@@ -1,0 +1,8 @@
+adaptation\_pathways.desktop.model.sequence module
+==================================================
+
+.. automodule:: adaptation_pathways.desktop.model.sequence
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :inherited-members:

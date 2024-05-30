@@ -1,0 +1,8 @@
+adaptation\_pathways.graph.node.action module
+=============================================
+
+.. automodule:: adaptation_pathways.graph.node.action
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :inherited-members:

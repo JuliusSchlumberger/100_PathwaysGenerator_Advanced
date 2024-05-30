@@ -1,0 +1,8 @@
+adaptation\_pathways.plot.sequence\_graph.default module
+========================================================
+
+.. automodule:: adaptation_pathways.plot.sequence_graph.default
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :inherited-members:

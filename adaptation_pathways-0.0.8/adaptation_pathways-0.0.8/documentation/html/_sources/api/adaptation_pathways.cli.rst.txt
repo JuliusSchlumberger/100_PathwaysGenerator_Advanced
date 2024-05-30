@@ -1,0 +1,20 @@
+adaptation\_pathways.cli package
+================================
+
+.. automodule:: adaptation_pathways.cli
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :inherited-members:
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   adaptation_pathways.cli.create_logo
+   adaptation_pathways.cli.main
+   adaptation_pathways.cli.pathway_generator
+   adaptation_pathways.cli.plot_graphs
+   adaptation_pathways.cli.plot_pathway_map
