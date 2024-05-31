@@ -1,5 +1,3 @@
-import numpy as np
-import matplotlib.pyplot as plt
 import itertools
 from utilities_v2.create_marker_dictionary import create_marker_dictionary
 from utilities_v2.find_integers import find_first_and_second_integers

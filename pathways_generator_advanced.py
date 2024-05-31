@@ -1,17 +1,12 @@
 import json
 import numpy as np
-from utilities_v2.optimize_positions import create_optimized_positions
-from utilities_v2.create_marker_dictionary import create_marker_dictionary
-from utilities_v2.instance_dictionary import create_instance_dictionary
-from utilities_v2.create_figures.base_figure import base_figure
-from utilities_v2.get_network_dicts import get_network_dicts
+from utilities._optimize_positions import create_optimized_positions
+from utilities._create_marker_dictionary import create_marker_dictionary
+from utilities._instance_dictionary import create_instance_dictionary
+from utilities._base_figure import base_figure
+from utilities._get_network_dicts import get_network_dicts
 
-
-def pathways_generator_advanced(input_file, file_sequence_only, file_tipping_points, file_offset, file_base, savepath,
-                                renaming_dict, replacing_measure, measure_numbers_inv, max_x_offset, max_y_offset,
-                                measure_colors,
-                                with_pathways=False, unique_lines=False, optimize=True, num_iterations=False,
-                                with_logos=False):
+class Pathways_Generator_Advanced():
     """
     Generates visual representations of pathways with optional optimization and logos.
 
@@ -37,48 +32,58 @@ def pathways_generator_advanced(input_file, file_sequence_only, file_tipping_poi
     Returns:
     - None
     """
+    def __init__(self, measure_colors, measure_numbers_inv,replacing_measure, with_pathways, unique_lines):
+        self.with_pathways = with_pathways
+        self.unique_lines = unique_lines
+        self.measure_colors = measure_colors
+        self.measure_numbers_inv = measure_numbers_inv
+        self.replacing_measure = replacing_measure
 
-    # Create files from pathways generator input files
-    actions, action_transitions, base_y_values, x_offsets, measures_in_pathways = get_network_dicts(
-        input_file, file_sequence_only, file_tipping_points, renaming_dict, max_x_offset, with_pathways)
+    def prepare_files(self, input_file_with_pathways, file_sequence_only, file_tipping_points, renaming_dict,
+                      max_x_offset, max_y_offset, file_offset, file_base, optimize=True, num_iterations=False):
+        # Create files from pathways generator input files
+        actions, action_transitions, base_y_values, x_offsets, measures_in_pathways = get_network_dicts(self,
+            input_file_with_pathways, file_sequence_only, file_tipping_points, renaming_dict, max_x_offset)
 
-    # Get number of instances with different tipping points per measure, decide if lines with same tipping point are overlaid or not
-    instance_dict, max_instance = create_instance_dictionary(actions, unique_lines=unique_lines)
+        # Get number of instances with different tipping points per measure, decide if lines with same tipping point are overlaid or not
+        instance_dict, max_instance = create_instance_dictionary(self, actions)
 
-    # Calculate y-offsets for instances
-    y_offsets1 = np.linspace(0, max_y_offset, int(np.floor(max_instance / 2)) + 1)
-    y_offsets2 = np.linspace(-max_y_offset, 0, int(np.ceil(max_instance / 2)) + 1)
-    y_offsets = np.concatenate(
-        (y_offsets2[:-1], y_offsets1))  # Concatenate arrays without duplicating the middle value (zero)
-    y_offsets = {i: y_offsets[i - 1] for i in range(1, max_instance + 1)}  # Map offsets to instance numbers
+        # Calculate y-offsets for instances
+        y_offsets1 = np.linspace(0, max_y_offset, int(np.floor(max_instance / 2)) + 1)
+        y_offsets2 = np.linspace(-max_y_offset, 0, int(np.ceil(max_instance / 2)) + 1)
+        y_offsets = np.concatenate(
+            (y_offsets2[:-1], y_offsets1))  # Concatenate arrays without duplicating the middle value (zero)
+        y_offsets = {i: y_offsets[i - 1] for i in range(1, max_instance + 1)}  # Map offsets to instance numbers
 
-    if optimize:
-        # Optimize positions to minimize total vertical distance
-        preferred_base, preferred_offset = create_optimized_positions(
-            base_y_values, instance_dict, y_offsets, actions, action_transitions, file_offset, file_base,
-            measure_colors, num_iterations)
-    else:
-        # Load precomputed preferred offset and base y-values from files
-        with open(f'{file_offset}.json', 'r') as file:
-            preferred_offset = json.load(file)
+        if optimize:
+            # Optimize positions to minimize total vertical distance
+            preferred_base, preferred_offset = create_optimized_positions(self,
+                base_y_values, instance_dict, y_offsets, actions, action_transitions, file_offset, file_base,
+                num_iterations)
+        else:
+            # Load precomputed preferred offset and base y-values from files
+            with open(f'{file_offset}.json', 'r') as file:
+                preferred_offset = json.load(file)
 
-        with open(f'{file_base}.json', 'r') as file:
-            preferred_base = json.load(file)
+            with open(f'{file_base}.json', 'r') as file:
+                preferred_base = json.load(file)
 
-    # Create an inverse dictionary for preferred base y-values
-    preferred_dict_inv = {v: k for k, v in preferred_base.items()}
+        # Create an inverse dictionary for preferred base y-values
+        preferred_dict_inv = {v: k for k, v in preferred_base.items()}
 
-    # Initialize a dictionary to store begin and end coordinates for each measure and instance
-    action_pairs, data = create_marker_dictionary(actions, preferred_base, instance_dict, preferred_offset,
-                                                  measure_colors)
+        # Initialize a dictionary to store begin and end coordinates for each measure and instance
+        action_pairs, data = create_marker_dictionary(self, actions, preferred_base, instance_dict, preferred_offset,
+                                                      )
+        return data, action_pairs, action_transitions, x_offsets, preferred_dict_inv, measures_in_pathways
 
-    # Generate the base figure and save it
-    base_figure(data, action_pairs, action_transitions, measure_numbers_inv, x_offsets, preferred_dict_inv,
+
+    def create_base_figure(self, data, action_pairs, action_transitions, x_offsets, preferred_dict_inv,
                 measures_in_pathways,
-                savepath, measure_colors, with_pathways, unique_lines, replacing_measure, with_logos)
+                savepath, with_logos):
 
-
-
-
-
+        # Generate the base figure and save it
+        base_figure(self, data, action_pairs, action_transitions, x_offsets, preferred_dict_inv,
+                    measures_in_pathways,
+                    savepath, with_logos)
+        # return fig, ax
 

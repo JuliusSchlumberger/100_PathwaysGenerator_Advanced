@@ -1,11 +1,6 @@
-import matplotlib.pyplot as plt
-import numpy as np
-import re
 from matplotlib.offsetbox import OffsetImage, AnnotationBbox
 import matplotlib.pyplot as plt
-# from utilities.measure_numbers import MEASURE_NUMBERS_INV
 from utilities_v2.find_integers import find_first_and_second_integers
-# from design_choices.measure_colors import MEASURE_COLORS
 
 def base_figure(data, action_pairs, action_transitions, measure_numbers_inv, offsets, preferred_dict_inv,
                 measures_in_pathways, savepath, measure_colors, with_pathways, unique_lines, replacing_measure,

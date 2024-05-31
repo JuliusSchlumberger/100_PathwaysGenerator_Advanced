@@ -1,8 +1,8 @@
-from pathways_generator_advanced import pathways_generator_advanced
+from pathways_generator_advanced import Pathways_Generator_Advanced
 
 
 
-input_file = 'inputs/dashboard/all_sequences_flood_agr_Wp_50%.txt'
+input_file_with_pathways = 'inputs/dashboard/all_sequences_flood_agr_Wp_50%.txt'
 file_sequence_only = 'inputs/dashboard/all_sequences_flood_agr_Wp_50%_only_sequences.txt'
 file_tipping_points = 'inputs/dashboard/all_tp_timings_flood_agr_Wp_50%.txt'
 # Identify best positions
@@ -94,7 +94,11 @@ for k, v in measure_numbers.items():
 
 savepath='figures/dashboard/base_figure.svg'
 
+NewPathwayMaps = Pathways_Generator_Advanced(measure_colors, measure_numbers_inv, replacing_measure,
+                                             with_pathways=False, unique_lines=False)
 
-pathways_generator_advanced(input_file, file_sequence_only, file_tipping_points, file_offset, file_base, savepath,
-                                renaming_dict, replacing_measure,measure_numbers_inv, max_x_offset, max_y_offset, measure_colors, with_pathways=True,
-                                unique_lines=True, optimize=True, num_iterations=False, with_logos=True)
+# Create data for no-interaction plot
+data, action_pairs, action_transitions, x_offsets, preferred_dict_inv, measures_in_pathways = NewPathwayMaps.prepare_files(input_file_with_pathways, file_sequence_only, file_tipping_points, renaming_dict, max_x_offset, max_y_offset, file_offset, file_base, optimize=True, num_iterations=False)
+NewPathwayMaps.create_base_figure(data, action_pairs, action_transitions, x_offsets, preferred_dict_inv,
+                measures_in_pathways,
+                savepath, with_logos=True)
