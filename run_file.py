@@ -1,104 +1,85 @@
 from pathways_generator_advanced import Pathways_Generator_Advanced
+from utilities.static_inputs import *
 
-
-
+# no interaction files
 input_file_with_pathways = 'inputs/dashboard/all_sequences_flood_agr_Wp_50%.txt'
 file_sequence_only = 'inputs/dashboard/all_sequences_flood_agr_Wp_50%_only_sequences.txt'
 file_tipping_points = 'inputs/dashboard/all_tp_timings_flood_agr_Wp_50%.txt'
-# Identify best positions
+
+# interaction files
+input_file_with_pathways_with_interaction = 'inputs/dashboard/all_sequences_flood_agr_Wp_50%_flood_agr&drought_agr.txt'
+file_sequence_only_with_interaction = 'inputs/dashboard/all_sequences_flood_agr_Wp_50%_flood_agr&drought_agr_only_sequences.txt'
+file_tipping_points_with_interaction = 'inputs/dashboard/all_tp_timings_flood_agr_Wp_50%_flood_agr&drought_agr.txt'
+
+# File paths for optimized positions
 file_offset = 'optimized_offset'
 file_base = 'optimized_base'
 
-renaming_dict = {
-    'current': '0'
-}
-max_x_offset = .7 # will do adjustments in horizontal direction. Needs adjustment if lines of different measures start overlap.
-max_y_offset = .48 # will do adjustments in vertical direction between instances. Needs adjustment if markers overlap.
+savepath_base = 'figures/dashboard/base_figure.svg'
+savepath_base_i = 'figures/dashboard/base_figure_i.svg'
+savepath_difference_plot = 'figures/dashboard/interaction_figure.svg'
 
-replacing_measure = {   # if measure is not replacing any measure, empty list, else populate the lists
-    '0': [],
-    '1': [],
-    '2': [],
-    '3': [],
-    '4': [],
-    '5': [],
-    '6': [],
-    '7': [],
-    '8': [],
-    '9': [],
-    '10': [],
-    # blueish group
-    '11': ['12', '13','15'],
-    '12': [],
-    '13': [],
-    '14': [],
-    '15': ['11', '12', '13', '14'],
-    # greenish group
-    '16': [],
-    '17': [],
-    '18': [],
-    '19': [],
-}
-
-measure_colors = {
-            '0': '#bfbfbf',
-            '1': '#ffcc99',
-            '2': '#ffaa66',
-            '3': '#ff8800',
-            '4': '#cc6e00',
-            '5': '#994c00',
-            '6':'#cec3e6',
-            '7': '#9d94cc',
-            '8': '#4e429f',
-            '9': '#2e2570',
-            '10': '#b3cde3',
-            '11': '#6497b1',
-            '12': '#03396c',
-            '13': '#011f4b',
-            '14': '#011a30',
-            '15': '#005b96',
-            '16': '#b2dfdb',
-            '17': '#00897b',
-            '18': '#00695c',
-            '19': '#004d40'
-        }
-
-measure_numbers = {
-            'no_measure': 0,
-            'd_resilient_crops': 1,
-            'd_rain_irrigation': 2,
-            'd_gw_irrigation': 3,
-            'd_riv_irrigation': 4,
-            'd_soilm_practice': 5,
-            'd_multimodal_transport': 6,
-            'd_medium_ships': 7,
-            'd_small_ships': 8,
-            'd_dredging': 9,
-            'f_resilient_crops': 10,
-            'f_ditches': 11,
-            'f_local_support': 12,
-            'f_dike_elevation_s': 13,
-            'f_dike_elevation_l': 14,
-            'f_maintenance': 15,
-            'f_room_for_river': 16,
-            'f_wet_proofing_houses': 17,
-            'f_local_protect': 18,
-            'f_awareness_campaign': 19
-        }
-
-measure_numbers_inv = {}
-
-for k, v in measure_numbers.items():
-    measure_numbers_inv[v] = k
-
-
-savepath='figures/dashboard/base_figure.svg'
+# Initiate new Pathways Map
+with_pathways = True    # account for pathways information [no effect at the moment]
+unique_lines = True     # if True unique vertical lines. If 'with_pathways' also True, also unique horizontal lines per pw
+input_with_pathways = True  # if True, input file contains information on pws as well.
+optimize_positions = True   # automatically adjusts the position of the measures to minimize vertical distance
+num_interations = False # if integer, indicates after how many iterations stop optimizing. Else all combinations run
 
 NewPathwayMaps = Pathways_Generator_Advanced(measure_colors, measure_numbers_inv, replacing_measure,
-                                             with_pathways=False, unique_lines=False)
+                                             with_pathways=with_pathways, unique_lines=unique_lines,
+                                             input_with_pathways=input_with_pathways)
 
 # Create data for no-interaction plot
-data, action_pairs, action_transitions, x_offsets, preferred_dict_inv, measures_in_pathways = NewPathwayMaps.prepare_files(input_file_with_pathways, file_sequence_only, file_tipping_points, renaming_dict, max_x_offset, max_y_offset, file_offset, file_base, optimize=True, num_iterations=False)
+initial_instance_dict, actions, action_transitions, \
+initial_base_y_values, x_offsets, initial_measures_in_pathways, \
+initial_max_instance, initial_x_position_dict = NewPathwayMaps.create_start_files(input_file_with_pathways, file_sequence_only,
+                                                                          file_tipping_points, renaming_dict, max_x_offset)
+
+# Create data for interaction plot
+instance_dict, actions_i, action_transitions_i, \
+base_y_values, x_offsets, measures_in_pathways, \
+max_instance, x_position_dict = NewPathwayMaps.create_start_files(input_file_with_pathways_with_interaction,
+                                                                  file_sequence_only_with_interaction,
+                                                                  file_tipping_points_with_interaction,
+                                                                  renaming_dict,
+                                                                  max_x_offset,
+                                                                  initial_measures_in_pathways,
+                                                                  initial_base_y_values,
+                                                                  initial_instance_dict,
+                                                                  initial_max_instance,
+                                                                  initial_x_position_dict)
+
+# no interactions
+data, action_pairs, action_transitions, x_offsets, \
+preferred_dict_inv, measures_in_pathways = NewPathwayMaps.prepare_files(instance_dict, actions, action_transitions,
+                                                                        base_y_values, x_offsets, measures_in_pathways,
+                                                                        max_instance, max_y_offset,
+                                                                        file_offset, file_base,
+                                                                        optimize=optimize_positions,
+                                                                        num_iterations=num_interations)
+
+# with interactions
+data_i, action_pairs_i, action_transitions_i, x_offsets, \
+preferred_dict_inv, measures_in_pathways = NewPathwayMaps.prepare_files(instance_dict, actions_i, action_transitions_i,
+                                                                        base_y_values, x_offsets, measures_in_pathways,
+                                                                        max_instance, max_y_offset,
+                                                                        file_offset, file_base)
+
+# Create base figure for no interactions
 NewPathwayMaps.create_base_figure(data, action_pairs, action_transitions, x_offsets, preferred_dict_inv,
                 measures_in_pathways,
-                savepath, with_logos=True)
+                with_logos=True)
+# Safe figure without interactions
+NewPathwayMaps.fig.savefig(savepath_base, dpi=800)
+# add in grey the pathways with interactions
+NewPathwayMaps.add_other_map(data_i, action_pairs_i, action_transitions_i, x_offsets, preferred_dict_inv,
+                measures_in_pathways,
+                with_logos=True)
+NewPathwayMaps.fig.savefig(savepath_difference_plot, dpi=800)
+
+# Create base figure for with interactions
+NewPathwayMaps.create_base_figure(data_i, action_pairs_i, action_transitions_i, x_offsets, preferred_dict_inv,
+                measures_in_pathways,
+                with_logos=True)
+NewPathwayMaps.fig.savefig(savepath_base_i, dpi=800)
